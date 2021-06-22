@@ -1,11 +1,14 @@
-#讀取檔案
+import os #operating system作業系統
 products = []
-with open('products.csv', 'r', encoding='utf-8') as f:
-	for line in f:         #去除/n
-		name, price = line.strip().split(',')
-		products.append([name, price])
-print(products)
-
+if os.path.isfile('products.csv'):
+	print('水唷!找到了!')
+	with open('products.csv', 'r', encoding='utf-8') as f:
+		for line in f:         #去除/n
+			name, price = line.strip().split(',')
+			products.append([name, price])
+	print(products)
+else:
+	print('裝肖偉喔?找不到啊!')
 
 
 products = []
