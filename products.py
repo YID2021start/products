@@ -2,7 +2,7 @@ import os #operating system作業系統
 #讀取檔案
 def read_file(filename):
     products = []
-    with open(filename, 'r', encoding='utf-8') as f:
+    with open(filename, 'r', encoding='utf_8_sig') as f:
         for line in f:
             if '商品,價格' in line:
                 continue         
@@ -24,7 +24,7 @@ def print_porducts(products):
         print(p[0], '的價格是', p[1])
 #寫入檔案
 def write_file(filename, products):
-    with open(filename, 'w', encoding='utf-8') as f:
+    with open(filename, 'w', encoding='utf_8_sig') as f:
         f.write('商品,價格\n')
         for p in products:
             f.write(p[0] + ',' + str(p[1]) + '\n')
